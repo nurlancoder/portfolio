@@ -1,0 +1,207 @@
+@import "./theme.scss";
+
+.ai-contact {
+  width: 100vw;
+
+  .ai-contact-zebra-img {
+    height: 150px;
+    width: 1000%;
+    background-size: contain;
+    margin: 30px 0 30px 0%;
+    
+    @media (max-width: 768px) {
+      height: 120px;
+      margin: 25px 0 25px 0%;
+    }
+    
+    @media (max-width: 576px) {
+      height: 100px;
+      margin: 20px 0 20px 0%;
+    }
+    
+    @media (max-width: 480px) {
+      height: 80px;
+      margin: 15px 0 15px 0%;
+    }
+    
+    @media (max-width: 320px) {
+      height: 60px;
+      margin: 12px 0 12px 0%;
+    }
+
+    img {
+      fill: blue;
+      color: yellow;
+    }
+  }
+
+  .ai-contact-box {
+    background-color: $themeColor2;
+    text-align: center;
+
+    .ai-contact-box-width {
+      max-width: 600px;
+      padding: 40px 20px 20px 20px;
+      
+      @media (max-width: 768px) {
+        padding: 35px 15px 18px 15px;
+        max-width: 100%;
+      }
+      
+      @media (max-width: 576px) {
+        padding: 30px 15px 15px 15px;
+      }
+      
+      @media (max-width: 480px) {
+        padding: 25px 10px 12px 10px;
+      }
+      
+      @media (max-width: 320px) {
+        padding: 20px 8px 10px 8px;
+      }
+    }
+
+    .ai-contact-label {
+      font-size: clamp(15px, 2vw, 20px);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      color: $themeColor4;
+      
+      @media (max-width: 768px) {
+        font-size: clamp(14px, 2vw, 18px);
+        margin-bottom: 18px;
+      }
+      
+      @media (max-width: 576px) {
+        font-size: clamp(13px, 2vw, 16px);
+        margin-bottom: 15px;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: clamp(12px, 2vw, 15px);
+        margin-bottom: 12px;
+      }
+      
+      @media (max-width: 320px) {
+        font-size: clamp(11px, 2vw, 14px);
+        margin-bottom: 10px;
+      }
+    }
+
+    .ai-contact-title {
+      font-size: clamp(35px, 5vw, 50px);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: $themeColor3;
+      
+      @media (max-width: 768px) {
+        font-size: clamp(28px, 5vw, 40px);
+        margin-bottom: 18px;
+      }
+      
+      @media (max-width: 576px) {
+        font-size: clamp(24px, 5vw, 35px);
+        margin-bottom: 15px;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: clamp(20px, 5vw, 30px);
+        margin-bottom: 12px;
+      }
+      
+      @media (max-width: 320px) {
+        font-size: clamp(18px, 5vw, 26px);
+        margin-bottom: 10px;
+      }
+    }
+
+    .ai-contact-text {
+      font-size: clamp(15px, 2vw, 20px);
+      line-height: 1.5;
+      color: $themeColor3;
+      
+      @media (max-width: 768px) {
+        font-size: clamp(14px, 2vw, 18px);
+      }
+      
+      @media (max-width: 576px) {
+        font-size: clamp(13px, 2vw, 16px);
+      }
+      
+      @media (max-width: 480px) {
+        font-size: clamp(12px, 2vw, 15px);
+      }
+      
+      @media (max-width: 320px) {
+        font-size: clamp(11px, 2vw, 14px);
+      }
+    }
+
+    .ai-contact-button {
+      margin-top: 50px;
+      
+      @media (max-width: 768px) {
+        margin-top: 40px;
+      }
+      
+      @media (max-width: 576px) {
+        margin-top: 35px;
+      }
+      
+      @media (max-width: 480px) {
+        margin-top: 30px;
+      }
+      
+      @media (max-width: 320px) {
+        margin-top: 25px;
+      }
+    }
+  }
+
+  .ai-contact-git-section {
+    margin-top: 50px;
+    font-size: 14px;
+    color: $themeColor3;
+    line-height: 1.5;
+    font-weight: 600;
+    cursor: pointer;
+    
+    @media (max-width: 768px) {
+      margin-top: 40px;
+      font-size: 13px;
+    }
+    
+    @media (max-width: 576px) {
+      margin-top: 35px;
+      font-size: 12px;
+    }
+    
+    @media (max-width: 480px) {
+      margin-top: 30px;
+      font-size: 11px;
+    }
+    
+    @media (max-width: 320px) {
+      margin-top: 25px;
+      font-size: 10px;
+    }
+
+    svg {
+      stroke: $themeColor3;
+      width: 14px;
+    }
+
+    span {
+      margin: 0 5px;
+    }
+
+    &:hover {
+      color: $themeColor4;
+
+      svg {
+        stroke: $themeColor4;
+      }
+    }
+  }
+}

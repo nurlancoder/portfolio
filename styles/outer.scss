@@ -1,0 +1,129 @@
+@import "./theme.scss";
+
+.ai-outer {
+  .ai-outer-container {
+    height: 100vh;
+    
+    @media (max-width: 320px) {
+      height: auto;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
+    
+    @media (min-width: 321px) and (max-width: 480px) {
+      height: auto;
+      min-height: 100vh;
+      padding: 30px 0;
+    }
+
+    .ai-outer-text {
+      position: absolute;
+      z-index: 1;
+
+      .ai-outer-my-name {
+        margin: 0px 0px 30px 4px;
+        font-size: clamp(14px, 5vw, 16px);
+        font-weight: 600;
+        line-height: 1;
+        
+        @media (max-width: 320px) {
+          margin: 0px 0px 15px 4px;
+          font-size: 12px;
+        }
+        
+        @media (min-width: 321px) and (max-width: 480px) {
+          margin: 0px 0px 20px 4px;
+          font-size: 13px;
+        }
+      }
+
+      .ai-outer-heading {
+        font-size: clamp(40px, 8vw, 80px);
+        font-weight: 700;
+        color: $themeColor3;
+        line-height: 1;
+        
+        @media (max-width: 320px) {
+          font-size: clamp(28px, 8vw, 35px);
+        }
+        
+        @media (min-width: 321px) and (max-width: 480px) {
+          font-size: clamp(32px, 8vw, 45px);
+        }
+        
+        @media (min-width: 481px) and (max-width: 576px) {
+          font-size: clamp(35px, 8vw, 55px);
+        }
+      }
+
+      .ai-outer-heading2 {
+        font-size: clamp(20px, 4vw, 40px);
+        font-weight: 600;
+        line-height: 1.5;
+        color: $themeColor4;
+        
+        @media (max-width: 320px) {
+          font-size: clamp(16px, 4vw, 20px);
+        }
+        
+        @media (min-width: 321px) and (max-width: 480px) {
+          font-size: clamp(18px, 4vw, 25px);
+        }
+      }
+
+      .ai-outer-description {
+        margin: 20px 0px 0px;
+        max-width: 540px;
+        color: $themeColor3;
+        font-size: clamp(14px, 2vw, 16px);
+        
+        @media (max-width: 320px) {
+          margin: 15px 0px 0px;
+          max-width: 100%;
+          font-size: 12px;
+        }
+        
+        @media (min-width: 321px) and (max-width: 480px) {
+          margin: 18px 0px 0px;
+          max-width: 100%;
+          font-size: 13px;
+        }
+        
+        @media (min-width: 577px) and (max-width: 768px) {
+          max-width: 100%;
+          font-size: 14px;
+        }
+      }
+
+      .ai-outer-contact {
+        margin-top: 50px;
+        
+        @media (max-width: 320px) {
+          margin-top: 30px;
+        }
+        
+        @media (min-width: 321px) and (max-width: 480px) {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+
+  .ai-outer-gooery {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    flex: 1;
+    
+    @media (max-width: 320px) {
+      height: 100%;
+      min-height: 100vh;
+    }
+    
+    @media (min-width: 321px) and (max-width: 480px) {
+      height: 100%;
+      min-height: 100vh;
+    }
+  }
+}

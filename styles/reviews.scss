@@ -1,0 +1,332 @@
+@import "./theme.scss";
+
+.ai-reviews {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+
+  .ai-reviews-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 0 20px;
+  }
+
+  .ai-reviews-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 60px 5% 100px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    
+    @media (max-width: 1200px) {
+      padding: 50px 4% 80px 4%;
+      gap: 35px;
+    }
+    
+    @media (max-width: 1024px) {
+      padding: 45px 4% 70px 4%;
+      gap: 30px;
+      max-width: 1200px;
+    }
+    
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      padding: 40px 3% 60px 3%;
+      gap: 25px;
+    }
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 40px 5% 80px 5%;
+    }
+    
+    @media (max-width: 576px) {
+      gap: 25px;
+      padding: 35px 4% 60px 4%;
+    }
+    
+    @media (max-width: 480px) {
+      gap: 20px;
+      padding: 30px 3% 50px 3%;
+    }
+    
+    @media (max-width: 320px) {
+      gap: 18px;
+      padding: 25px 2% 40px 2%;
+    }
+  }
+
+  .ai-reference-card {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    perspective: 1000px;
+    cursor: pointer;
+
+    &:hover {
+      .ai-reference-card-glow {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .ai-reference-card-content {
+    position: relative;
+    background: rgba($themeColor3, 0.95);
+    border-radius: 20px;
+    padding: 30px 25px;
+    border: 2px solid rgba($themeColor2, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba($themeColor2, 0.05);
+    
+    @media (max-width: 768px) {
+      padding: 25px 20px;
+      border-radius: 16px;
+    }
+    
+    @media (max-width: 576px) {
+      padding: 22px 18px;
+      border-radius: 14px;
+    }
+    
+    @media (max-width: 480px) {
+      padding: 20px 15px;
+      border-radius: 12px;
+    }
+    
+    @media (max-width: 320px) {
+      padding: 18px 12px;
+      border-radius: 10px;
+    }
+
+    &.ai-reference-hovered {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .ai-reference-card-glow {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 30px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 1;
+    filter: blur(20px);
+  }
+
+  .ai-reference-name {
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 20px rgba($themeColor2, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5);
+    
+    @media (max-width: 768px) {
+      font-size: clamp(20px, 4vw, 24px);
+      margin-bottom: 18px;
+    }
+    
+    @media (max-width: 576px) {
+      font-size: clamp(18px, 4vw, 22px);
+      margin-bottom: 15px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: clamp(16px, 4vw, 20px);
+      margin-bottom: 12px;
+    }
+    
+    @media (max-width: 320px) {
+      font-size: clamp(14px, 4vw, 18px);
+      margin-bottom: 10px;
+    }
+  }
+
+  .ai-reference-divider {
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 255, 255, 0.6) 50%, 
+      transparent 100%
+    );
+    margin: 20px 0;
+    border-radius: 2px;
+    animation: shimmer 3s infinite;
+    box-shadow: 0 0 10px rgba($themeColor2, 0.5);
+  }
+
+  @keyframes shimmer {
+    0%, 100% {
+      opacity: 0.5;
+      transform: scaleX(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  .ai-reference-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .ai-reference-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    
+    svg {
+      flex-shrink: 0;
+      color: #ffffff;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 0 4px rgba($themeColor2, 0.6));
+    }
+
+    span {
+      color: #ffffff;
+      font-size: clamp(14px, 2vw, 16px);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      flex: 1;
+      text-shadow: 0 0 10px rgba($themeColor2, 0.5), 0 2px 4px rgba(0, 0, 0, 0.5);
+      
+      @media (max-width: 768px) {
+        font-size: clamp(13px, 2vw, 15px);
+      }
+      
+      @media (max-width: 576px) {
+        font-size: clamp(12px, 2vw, 14px);
+      }
+      
+      @media (max-width: 480px) {
+        font-size: clamp(11px, 2vw, 13px);
+      }
+      
+      @media (max-width: 320px) {
+        font-size: clamp(10px, 2vw, 12px);
+      }
+    }
+
+    &:hover {
+      background: rgba($themeColor4, 0.3);
+      border-color: $themeColor4;
+      transform: translateX(8px);
+      box-shadow: 0 4px 20px rgba($themeColor4, 0.6), 0 0 30px rgba($themeColor2, 0.3);
+
+      svg {
+        color: $themeColor2;
+        filter: drop-shadow(0 0 8px rgba($themeColor2, 1));
+        transform: scale(1.2) rotate(5deg);
+      }
+
+      span {
+        color: $themeColor2;
+        text-shadow: 0 0 15px rgba($themeColor2, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    &:active {
+      transform: translateX(4px) scale(0.98);
+    }
+  }
+
+  // Theme variations
+  .ai-reference-theme-theme1 {
+    .ai-reference-card-content {
+      border-color: rgba($themeColor4, 0.4);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba($themeColor4, 0.08), 0 0 30px rgba($themeColor4, 0.2);
+    }
+
+    .ai-reference-card-glow {
+      background: radial-gradient(circle, rgba($themeColor4, 0.4) 0%, transparent 70%);
+    }
+
+    &.ai-reference-theme-theme1-glow {
+      background: radial-gradient(circle, rgba($themeColor4, 0.5) 0%, transparent 70%);
+    }
+  }
+
+  .ai-reference-theme-theme2 {
+    .ai-reference-card-content {
+      border-color: rgba($themeColor2, 0.4);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba($themeColor2, 0.08), 0 0 30px rgba($themeColor2, 0.2);
+    }
+
+    .ai-reference-card-glow {
+      background: radial-gradient(circle, rgba($themeColor2, 0.4) 0%, transparent 70%);
+    }
+
+    &.ai-reference-theme-theme2-glow {
+      background: radial-gradient(circle, rgba($themeColor2, 0.5) 0%, transparent 70%);
+    }
+  }
+
+  .ai-reference-theme-theme3 {
+    .ai-reference-card-content {
+      border-color: rgba($themeColor4, 0.4);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba($themeColor2, 0.06), 0 0 30px rgba($themeColor4, 0.15);
+    }
+
+    .ai-reference-card-glow {
+      background: radial-gradient(circle, rgba($themeColor2, 0.3) 0%, rgba($themeColor4, 0.3) 50%, transparent 100%);
+    }
+
+    &.ai-reference-theme-theme3-glow {
+      background: radial-gradient(circle, rgba($themeColor2, 0.4) 0%, rgba($themeColor4, 0.4) 50%, transparent 100%);
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    padding: 60px 0;
+
+    .ai-reference-card-content {
+      padding: 25px 20px;
+    }
+
+    .ai-reference-contact-item {
+      padding: 10px 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .ai-reviews-list {
+      padding: 30px 3% 60px 3%;
+    }
+
+    .ai-reference-card-content {
+      padding: 20px 18px;
+      border-radius: 16px;
+    }
+  }
+}

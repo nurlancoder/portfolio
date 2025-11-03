@@ -1,0 +1,118 @@
+@import "./theme.scss";
+
+.ai-side-elements {
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
+  
+  @media (max-width: 992px) {
+    .ai-side-elements-item {
+      margin: 15px 0;
+      
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .ai-side-elements-item {
+      margin: 18px 0;
+    }
+  }
+
+  .ai-side-elements-container {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+
+    .ai-side-elements-item {
+      margin: 20px 0;
+      cursor: pointer;
+
+      svg {
+        stroke: $themeColor3;
+        width: 20px;
+        height: 20px;
+        
+        @media (max-width: 1200px) {
+          width: 18px;
+          height: 18px;
+        }
+        
+        @media (max-width: 1024px) {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .ai-side-elements-text {
+        color: $themeColor3;
+        letter-spacing: 2px;
+        writing-mode: vertical-rl;
+        font-size: 12px;
+        
+        @media (max-width: 1200px) {
+          font-size: 11px;
+          letter-spacing: 1.5px;
+        }
+        
+        @media (max-width: 1024px) {
+          font-size: 10px;
+          letter-spacing: 1px;
+        }
+      }
+
+      &:hover {
+        svg {
+          stroke: $themeColor4;
+        }
+
+        .ai-side-elements-text {
+          color: $themeColor4;
+        }
+      }
+    }
+
+    .ai-side-elements-line {
+      display: block;
+      width: 1px;
+      height: 90px;
+      margin: 10px auto 0 auto;
+      background-color: $themeColor3;
+      
+      @media (max-width: 1200px) {
+        height: 80px;
+      }
+      
+      @media (max-width: 1024px) {
+        height: 70px;
+      }
+    }
+  }
+
+  .ai-side-elements-left {
+    left: 2.5%;
+    
+    @media (max-width: 1200px) {
+      left: 2%;
+    }
+    
+    @media (max-width: 1024px) {
+      left: 1.5%;
+    }
+  }
+
+  .ai-side-elements-right {
+    right: 2.5%;
+    
+    @media (max-width: 1200px) {
+      right: 2%;
+    }
+    
+    @media (max-width: 1024px) {
+      right: 1.5%;
+    }
+  }
+}
