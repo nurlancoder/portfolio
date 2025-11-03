@@ -11,10 +11,7 @@ const header = {
         { title: 'Skills', id: 'certifications' },
         { title: 'Contact', id: 'contact' },
     ],
-    rightBtn: {
-        label: 'Curriculum Vitae | CV',
-        onClick: () => openLink('https://drive.google.com/uc?export=download&id=1073Ps6ap2r7oUT5UFLeXuf2Dqei5Igkj')
-    },
+    rightBtn: null,
     logo: null,
     handleIconClick: () => scrollTo('home'),
     handleItemSelect: (menu) => scrollTo(menu.id),
